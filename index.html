@@ -4,60 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js.js" defer></script>
     <title>Rock Paper Scissors</title>
 </head>
 <body>
-    <script>
-        function computerPlay() {
-            let play = Math.floor(Math.random() * 3);
-            if (play == 0) {
-                return "rock"
-            }
-            else if (play == 1) {
-                return "paper"
-            }
-            else if (play == 2) {
-                return "scissors"
-            }
-        }
-
-        function playRound(playerSelection, computerSelection) {
-            player = playerSelection.toLowerCase()
-            if (player != "rock" && player != "scissors" && player !== "paper") {
-                return "Please pick a valid option."
-            }
-            else if (player == computerSelection) {
-                return `Tie! You both picked ${player}.`;
-            }
-            else if (player == "rock" && computerSelection == "paper") {
-                return `You lose! Paper beats rock`;
-            }
-            else if (player == "rock" && computerSelection == "scissors") {
-                return `You win! Rock beat scissors`;
-            }
-            else if (player == "paper" && computerSelection =="scissors") {
-                return `You lose! Scissors beats paper`;
-            }
-            else if (player == "paper" && computerSelection =="rock") {
-                return `You win! Paper beats rock`;
-            }
-            else if (player == "scissors" && computerSelection =="rock") {
-                return `You lose! Rock beats scissors`;
-            }
-            else if (player == "scissors" && computerSelection =="paper") {
-                return `You win! Scissors beats paper!`;
-            }
-        }
-
-        let game = () =>  {
-            for (let i = 0; i < 5; i++) {
-                let playerPick = prompt("Pick rock, paper, or scissors");
-                let computerPick = computerPlay();
-                console.log(playRound(playerPick, computerPick));
-            }
-        }
-        
-        game();
-    </script>
+    <button id="rock">Rock</button>
+    <button id="paper">Paper</button>
+    <button id="scissors">Scissors</button>
+    <p></p>
+    <p class="record"></p>
 </body>
 </html>
